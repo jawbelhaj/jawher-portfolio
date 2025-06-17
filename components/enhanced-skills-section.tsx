@@ -294,7 +294,7 @@ main`}
                   "40% reduction in security false positives",
                   "35% faster development cycle with containerization",
                   "12 hours/week saved through AI automation",
-                  "Built distributed VM architecture overcoming hardware constraints",
+                  "Built distributed VM architecture overcoming ressources constraints",
                 ].map((achievement, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0" />
