@@ -12,20 +12,17 @@ import { ErrorBoundary } from "@/components/ui/error-boundary"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Jawher Belhaj - Enterprise Linux Solutions | IT Specialist & AI Developer",
+  title: "Jawher Belhaj - IT Specialist & Linux Developer | Professional Portfolio",
   description:
-    "Enterprise-grade Linux solutions and AI development services. Professional IT specialist with 5+ years experience in system administration, network security, and DevOps engineering. Serving Fortune 500 companies and startups.",
+    "Professional IT Specialist and Linux Developer with expertise in system administration, network security, and AI development. View my projects, certifications, and experience.",
   keywords: [
-    "Enterprise Linux Developer",
     "IT Specialist",
+    "Linux Developer",
     "System Administration",
     "Network Security",
     "AI Development",
-    "DevOps Engineering",
-    "Linux Consultant",
-    "Enterprise Solutions",
-    "Tunisia",
-    "Remote Work",
+    "Professional Portfolio",
+    "Jawher Belhaj",
   ],
   authors: [{ name: "Jawher Belhaj", url: "https://linkedin.com/in/jawher-belhaj-2147031a5" }],
   creator: "Jawher Belhaj",
@@ -39,26 +36,26 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://jawher-belhaj.vercel.app",
-    title: "Jawher Belhaj - Enterprise Linux Solutions",
+    title: "Jawher Belhaj - IT Specialist & Linux Developer | Professional Portfolio",
     description:
-      "Professional portfolio showcasing enterprise-grade Linux development, AI solutions, and IT consulting services.",
-    siteName: "Jawher Belhaj - Linux Developer",
+      "Professional IT Specialist and Linux Developer with expertise in system administration, network security, and AI development. View my projects, certifications, and experience.",
+    siteName: "Jawher Belhaj",
     images: [
       {
-        url: "/images/og-image.png",
+        url: "/images/fortune500-og-image.png",
         width: 1200,
         height: 630,
-        alt: "Jawher Belhaj - Enterprise Linux Solutions",
+        alt: "Jawher Belhaj - IT Specialist & Linux Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jawher Belhaj - Enterprise Linux Solutions",
+    title: "Jawher Belhaj - IT Specialist & Linux Developer | Professional Portfolio",
     description:
-      "Professional portfolio showcasing enterprise-grade Linux development, AI solutions, and IT consulting services.",
+      "Professional IT Specialist and Linux Developer with expertise in system administration, network security, and AI development.",
     creator: "@Jawher_Belhaj",
-    images: ["/images/og-image.png"],
+    images: ["/images/fortune500-og-image.png"],
   },
   robots: {
     index: true,
@@ -74,8 +71,8 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-verification-code",
-    yandex: "your-yandex-verification-code",
+    google: "fortune500-verification-code",
+    yandex: "fortune500-yandex-verification",
   },
     generator: 'v0.dev'
 }
@@ -96,11 +93,11 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Person",
+              "@type": ["Person", "ProfessionalService", "SoftwareApplication"],
               name: "Jawher Belhaj",
               jobTitle: "IT Specialist & Linux Developer",
               description:
-                "Enterprise Linux solutions specialist with expertise in system administration, AI development, and DevOps engineering.",
+                "Professional IT Specialist and Linux Developer with expertise in system administration, network security, and AI development. View my projects, certifications, and experience.",
               url: "https://jawher-belhaj.vercel.app",
               sameAs: [
                 "https://linkedin.com/in/jawher-belhaj-2147031a5",
@@ -114,6 +111,36 @@ export default function RootLayout({
               },
               email: "jawbelhaj@gmail.com",
               telephone: "+216-94-722-173",
+              serviceType: [
+                "IT Services",
+                "Linux Development",
+                "System Administration",
+                "Network Security",
+                "AI Development",
+              ],
+              areaServed: ["Global", "Remote Worldwide"],
+              hasCredential: [
+                {
+                  "@type": "EducationalOccupationalCredential",
+                  name: "IT Specialist",
+                },
+                {
+                  "@type": "EducationalOccupationalCredential",
+                  name: "Linux Development",
+                },
+                {
+                  "@type": "EducationalOccupationalCredential",
+                  name: "System Administration",
+                },
+                {
+                  "@type": "EducationalOccupationalCredential",
+                  name: "Network Security",
+                },
+              ],
+              applicationCategory: "Software",
+              operatingSystem: "Cross-platform",
+              softwareVersion: "1.0.0",
+              releaseNotes: "Initial release",
             }),
           }}
         />

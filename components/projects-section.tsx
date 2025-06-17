@@ -16,13 +16,12 @@ export function ProjectsSection() {
       title: "AI Coding Assistant",
       description:
         "An offline-first, autonomous AI architect for developers. It analyzes entire codebases at the pattern level, converts natural language into phased development plans, and continuously self-improves through reinforcement learning. With vector memory, multi-phase orchestration, and secure local execution.",
-      highlight:
-        "It codes, plans, and adapts—empowering developers with full control and zero cloud dependency.",
+      highlight: "It codes, plans, and adapts—empowering developers with full control and zero cloud dependency.",
       image: "/images/ai-coding-assistant.png",
       tags: ["AI", "Machine Learning", "Code Analysis", "Offline-First"],
       github: "https://github.com/jawbelhaj/app-architect-explorer",
       demo: "https://app-architect-explorer.lovable.app/",
-      icon: <TestTube className="h-5 w-5 text-purple-500" />,
+      icon: <Brain className="h-5 w-5 text-purple-500" />,
       featured: true,
       demoWorking: true,
     },
@@ -160,7 +159,18 @@ export function ProjectsSection() {
                       className="text-gray-400 hover:text-white gap-2 hover:bg-green-500/10"
                       asChild
                     >
-                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => {
+                          // Ensure the link opens properly
+                          if (!project.demo || project.demo === "#") {
+                            e.preventDefault()
+                            console.warn("Demo link not available")
+                          }
+                        }}
+                      >
                         <Globe className="h-4 w-4" />
                         Live Demo
                       </a>
