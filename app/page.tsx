@@ -1,8 +1,8 @@
 import { EnterpriseHeroSection } from "@/components/enterprise-hero-section"
-import { AboutSection } from "@/components/about-section"
-import { SkillsSection } from "@/components/skills-section"
-import { ProjectsSection } from "@/components/projects-section"
-import { ExperienceSection } from "@/components/experience-section"
+import { EnhancedAboutSection } from "@/components/enhanced-about-section"
+import { EnhancedSkillsSection } from "@/components/enhanced-skills-section"
+import { EnhancedProjectsSection } from "@/components/enhanced-projects-section"
+import { EnhancedExperienceSection } from "@/components/enhanced-experience-section"
 import { CertificationsSection } from "@/components/certifications-section"
 import { ContactSection } from "@/components/contact-section"
 import { MobileOptimizedNav } from "@/components/ui/mobile-optimized-nav"
@@ -16,10 +16,10 @@ export default function Home() {
       <MobileOptimizedNav />
       <main role="main" tabIndex={-1}>
         <EnterpriseHeroSection />
-        <AboutSection />
-        <SkillsSection />
-        <ProjectsSection />
-        <ExperienceSection />
+        <EnhancedAboutSection />
+        <EnhancedSkillsSection />
+        <EnhancedProjectsSection />
+        <EnhancedExperienceSection />
         <CertificationsSection />
         <ContactSection />
       </main>
