@@ -1,8 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Link from "next/link"
-import { Terminal, Menu, X } from "lucide-react"
+import { Terminal, Menu, X, FileText } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -27,6 +26,20 @@ export function NavBar() {
     { name: "Contact", href: "#contact" },
   ]
 
+  const handleNavClick = (href: string) => {
+    setMobileMenuOpen(false)
+
+    // Smooth scroll to section
+    const element = document.querySelector(href)
+    if (element) {
+      const offsetTop = element.offsetTop - 80 // Account for fixed header
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      })
+    }
+  }
+
   return (
     <header
       className={cn(
@@ -35,25 +48,36 @@ export function NavBar() {
       )}
     >
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
+        <button
+          onClick={() => handleNavClick("#")}
+          className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+        >
           <Terminal className="h-6 w-6 text-green-500" />
           <span className="font-mono text-lg font-bold">
             <span className="text-green-500">Jaguar</span>@<span className="text-purple-500">linux-dev</span>
           </span>
-        </Link>
+        </button>
 
         <nav className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
-            <Link
+            <button
               key={link.name}
-              href={link.href}
+              onClick={() => handleNavClick(link.href)}
               className="text-sm font-medium text-gray-300 hover:text-green-400 transition-colors"
             >
               {link.name}
-            </Link>
+            </button>
           ))}
-          <Button variant="outline" className="border-green-500 text-green-500 hover:bg-green-500/10">
-            Resume
+          <Button variant="outline" className="border-green-500 text-green-500 hover:bg-green-500/10" asChild>
+            <a
+              href="/files/jawher-belhaj-cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
+              <FileText className="h-4 w-4" />
+              Resume
+            </a>
           </Button>
         </nav>
 
@@ -67,17 +91,24 @@ export function NavBar() {
         <div className="md:hidden bg-black/95 border-b border-green-500/20">
           <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
             {navLinks.map((link) => (
-              <Link
+              <button
                 key={link.name}
-                href={link.href}
-                className="text-sm font-medium text-gray-300 hover:text-green-400 transition-colors py-2"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => handleNavClick(link.href)}
+                className="text-sm font-medium text-gray-300 hover:text-green-400 transition-colors py-2 text-left"
               >
                 {link.name}
-              </Link>
+              </button>
             ))}
-            <Button variant="outline" className="border-green-500 text-green-500 hover:bg-green-500/10 w-full">
-              Resume
+            <Button variant="outline" className="border-green-500 text-green-500 hover:bg-green-500/10 w-full" asChild>
+              <a
+                href="/files/jawher-belhaj-cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2"
+              >
+                <FileText className="h-4 w-4" />
+                Resume
+              </a>
             </Button>
           </div>
         </div>
