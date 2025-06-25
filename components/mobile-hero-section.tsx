@@ -1,20 +1,17 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { ArrowRight, Download, Terminal, Play, Pause } from "lucide-react"
+import { ArrowRight, Download, Terminal } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function MobileHeroSection() {
   const [mounted, setMounted] = useState(false)
   const [currentText, setCurrentText] = useState("")
-  const [isTyping, setIsTyping] = useState(true)
 
   const skills = ["Linux Specialist", "AI Developer", "System Admin", "Security Expert", "DevOps Engineer"]
 
   useEffect(() => {
     setMounted(true)
-
-    if (!isTyping) return
 
     let skillIndex = 0
     let charIndex = 0
@@ -44,7 +41,7 @@ export function MobileHeroSection() {
     }
 
     typeEffect()
-  }, [isTyping])
+  }, [])
 
   const scrollToSection = (sectionId: string) => {
     const element = document.querySelector(sectionId)
@@ -88,13 +85,6 @@ export function MobileHeroSection() {
                 {currentText}
                 <span className="animate-pulse text-green-500">|</span>
               </div>
-              <button
-                onClick={() => setIsTyping(!isTyping)}
-                className="ml-4 p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition-colors"
-                aria-label={isTyping ? "Pause animation" : "Play animation"}
-              >
-                {isTyping ? <Pause className="h-4 w-4 text-green-500" /> : <Play className="h-4 w-4 text-green-500" />}
-              </button>
             </div>
           </div>
 
