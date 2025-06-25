@@ -12,21 +12,15 @@ import { ErrorBoundary } from "@/components/ui/error-boundary"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Jawher Belhaj - IT Specialist & Linux Developer | Professional Portfolio",
+  title: "Jawher Belhaj - IT Specialist & Linux Developer",
   description:
-    "Professional IT Specialist and Linux Developer with expertise in system administration, network security, and AI development. View my projects, certifications, and experience.",
-  keywords: [
-    "IT Specialist",
-    "Linux Developer",
-    "System Administration",
-    "Network Security",
-    "AI Development",
-    "Professional Portfolio",
-    "Jawher Belhaj",
-  ],
-  authors: [{ name: "Jawher Belhaj", url: "https://linkedin.com/in/jawher-belhaj-2147031a5" }],
+    "Professional IT Specialist and Linux Developer with expertise in system administration, network security, and AI development.",
+  keywords: ["IT Specialist", "Linux Developer", "System Administration", "Network Security", "AI Development"],
+  authors: [{ name: "Jawher Belhaj" }],
   creator: "Jawher Belhaj",
   publisher: "Jawher Belhaj",
+  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
+  themeColor: "#000000",
   formatDetection: {
     email: false,
     address: false,
@@ -36,10 +30,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://jawher-belhaj.vercel.app",
-    title: "Jawher Belhaj - IT Specialist & Linux Developer | Professional Portfolio",
+    title: "Jawher Belhaj - IT Specialist & Linux Developer",
     description:
-      "Professional IT Specialist and Linux Developer with expertise in system administration, network security, and AI development. View my projects, certifications, and experience.",
-    siteName: "Jawher Belhaj",
+      "Professional IT Specialist and Linux Developer with expertise in system administration, network security, and AI development.",
+    siteName: "Jawher Belhaj Portfolio",
     images: [
       {
         url: "/images/fortune500-og-image.png",
@@ -60,15 +54,6 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    nocache: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: false,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
   verification: {
     google: "fortune500-verification-code",
@@ -88,6 +73,9 @@ export default function RootLayout({
         <link rel="canonical" href="https://jawher-belhaj.vercel.app" />
         <meta name="theme-color" content="#000000" />
         <meta name="msapplication-TileColor" content="#000000" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="format-detection" content="telephone=no" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -97,7 +85,7 @@ export default function RootLayout({
               name: "Jawher Belhaj",
               jobTitle: "IT Specialist & Linux Developer",
               description:
-                "Professional IT Specialist and Linux Developer with expertise in system administration, network security, and AI development. View my projects, certifications, and experience.",
+                "Professional IT Specialist and Linux Developer with expertise in system administration, network security, and AI development.",
               url: "https://jawher-belhaj.vercel.app",
               sameAs: [
                 "https://linkedin.com/in/jawher-belhaj-2147031a5",

@@ -1,29 +1,27 @@
-import { EnterpriseHeroSection } from "@/components/enterprise-hero-section"
-import { EnhancedAboutSection } from "@/components/enhanced-about-section"
-import { EnhancedSkillsSection } from "@/components/enhanced-skills-section"
-import { EnhancedProjectsSection } from "@/components/enhanced-projects-section"
-import { EnhancedExperienceSection } from "@/components/enhanced-experience-section"
-import { CertificationsSection } from "@/components/certifications-section"
-import { ContactSection } from "@/components/contact-section"
-import { MobileOptimizedNav } from "@/components/ui/mobile-optimized-nav"
-import { Footer } from "@/components/footer"
-import { Section508SkipLinks } from "@/components/ui/section-508-skip-links"
+import { MobileHeroSection } from "@/components/mobile-hero-section"
+import { MobileAboutSection } from "@/components/mobile-about-section"
+import { MobileSkillsSection } from "@/components/mobile-skills-section"
+import { MobileProjectsSection } from "@/components/mobile-projects-section"
+import { MobileExperienceSection } from "@/components/mobile-experience-section"
+import { MobileCertificationsSection } from "@/components/mobile-certifications-section"
+import { MobileContactSection } from "@/components/mobile-contact-section"
+import { MobileNav } from "@/components/mobile-nav"
+import { MobileFooter } from "@/components/mobile-footer"
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white relative">
-      <Section508SkipLinks />
-      <MobileOptimizedNav />
+      <MobileNav />
       <main role="main" tabIndex={-1}>
-        <EnterpriseHeroSection />
-        <EnhancedAboutSection />
-        <EnhancedSkillsSection />
-        <EnhancedProjectsSection />
-        <EnhancedExperienceSection />
-        <CertificationsSection />
-        <ContactSection />
+        <MobileHeroSection />
+        <MobileAboutSection />
+        <MobileSkillsSection />
+        <MobileProjectsSection />
+        <MobileExperienceSection />
+        <MobileCertificationsSection />
+        <MobileContactSection />
       </main>
-      <Footer />
+      <MobileFooter />
     </div>
   )
 }

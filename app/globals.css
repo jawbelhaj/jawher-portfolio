@@ -6,39 +6,24 @@
   :root {
     --background: 0 0% 0%;
     --foreground: 0 0% 100%;
-
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
-
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
-
     --primary: 142.1 70.6% 45.3%;
     --primary-foreground: 144.9 80.4% 10%;
-
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
-
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
-
     --accent: 240 3.7% 15.9%;
     --accent-foreground: 0 0% 98%;
-
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 142.1 70.6% 45.3%;
-
     --radius: 0.5rem;
-
-    --chart-1: 142.1 70.6% 45.3%;
-    --chart-2: 262 83.3% 57.8%;
-    --chart-3: 221.2 83.2% 53.3%;
-    --chart-4: 47.9 95.8% 53.1%;
-    --chart-5: 0 84.2% 60.2%;
   }
 }
 
@@ -48,72 +33,128 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-size: 16px;
+    line-height: 1.6;
   }
 }
 
-/* Enterprise-grade accessibility features */
-.high-contrast {
-  --background: 0 0% 0%;
-  --foreground: 0 0% 100%;
-  --primary: 120 100% 50%;
-  --border: 120 100% 50%;
-}
-
-.large-text {
-  font-size: 1.125rem !important;
-}
-
-.large-text h1 {
-  font-size: 3rem !important;
-}
-
-.large-text h2 {
-  font-size: 2.5rem !important;
-}
-
-.large-text h3 {
-  font-size: 2rem !important;
-}
-
-.reduce-motion * {
-  animation-duration: 0.01ms !important;
-  animation-iteration-count: 1 !important;
-  transition-duration: 0.01ms !important;
-}
-
-/* Enhanced mobile optimizations */
-@media (max-width: 768px) {
+/* Mobile-first responsive design */
+@media (max-width: 640px) {
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
   }
 
-  /* Improve touch targets */
-  button,
-  a {
-    min-height: 44px;
-    min-width: 44px;
-  }
-
   /* Better mobile typography */
   h1 {
-    font-size: 2.5rem !important;
-    line-height: 1.2;
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1rem !important;
   }
 
   h2 {
-    font-size: 2rem !important;
-    line-height: 1.3;
+    font-size: 1.75rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0.75rem !important;
   }
 
-  /* Mobile-optimized spacing */
+  h3 {
+    font-size: 1.5rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* Mobile spacing */
   section {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  /* Better touch targets */
+  button,
+  a,
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.75rem;
+  }
+
+  /* Mobile cards */
+  .mobile-card {
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  /* Mobile grid fixes */
+  .grid {
+    gap: 1rem !important;
+  }
+
+  /* Mobile text sizing */
+  .text-sm {
+    font-size: 0.875rem !important;
+  }
+
+  .text-xs {
+    font-size: 0.75rem !important;
+  }
+
+  /* Mobile padding fixes */
+  .p-6 {
+    padding: 1rem !important;
+  }
+
+  .p-4 {
+    padding: 0.75rem !important;
+  }
+
+  /* Mobile margin fixes */
+  .mb-8 {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .mb-6 {
+    margin-bottom: 1rem !important;
+  }
+
+  .mb-4 {
+    margin-bottom: 0.75rem !important;
   }
 }
 
-/* Performance optimizations */
+/* Tablet responsive */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  h2 {
+    font-size: 2.25rem !important;
+  }
+}
+
+/* Accessibility improvements */
+*:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  :root {
+    --primary: 120 100% 50%;
+    --border: 120 100% 50%;
+  }
+}
+
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -122,16 +163,51 @@
   }
 }
 
-/* Focus indicators for accessibility */
-*:focus-visible {
-  outline: 2px solid hsl(var(--primary));
-  outline-offset: 2px;
+/* Mobile navigation fixes */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(34, 197, 94, 0.2);
 }
 
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-  :root {
-    --primary: 120 100% 50%;
-    --border: 120 100% 50%;
+/* Mobile menu overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+}
+
+/* Mobile safe areas */
+@supports (padding: max(0px)) {
+  .mobile-safe {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+    padding-top: max(1rem, env(safe-area-inset-top));
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
   }
+}
+
+/* Loading states */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Error states */
+.error {
+  border-color: rgb(239, 68, 68);
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+/* Success states */
+.success {
+  border-color: rgb(34, 197, 94);
+  background-color: rgba(34, 197, 94, 0.1);
 }
