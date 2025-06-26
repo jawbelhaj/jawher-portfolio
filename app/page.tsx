@@ -1,27 +1,27 @@
-import { MobileHeroSection } from "@/components/mobile-hero-section"
-import { MobileAboutSection } from "@/components/mobile-about-section"
-import { MobileSkillsSection } from "@/components/mobile-skills-section"
-import { MobileProjectsSection } from "@/components/mobile-projects-section"
-import { MobileExperienceSection } from "@/components/mobile-experience-section"
-import { MobileCertificationsSection } from "@/components/mobile-certifications-section"
-import { MobileContactSection } from "@/components/mobile-contact-section"
-import { MobileNav } from "@/components/mobile-nav"
-import { MobileFooter } from "@/components/mobile-footer"
+import { ResponsiveHeroSection } from "@/components/responsive-hero-section"
+import { ResponsiveAboutSection } from "@/components/responsive-about-section"
+import { ResponsiveSkillsSection } from "@/components/responsive-skills-section"
+import { ResponsiveProjectsSection } from "@/components/responsive-projects-section"
+import { ResponsiveExperienceSection } from "@/components/responsive-experience-section"
+import { ResponsiveCertificationsSection } from "@/components/responsive-certifications-section"
+import { ResponsiveContactSection } from "@/components/responsive-contact-section"
+import { ResponsiveNav } from "@/components/responsive-nav"
+import { ResponsiveFooter } from "@/components/responsive-footer"
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white relative">
-      <MobileNav />
+      <ResponsiveNav />
       <main role="main" tabIndex={-1}>
-        <MobileHeroSection />
-        <MobileAboutSection />
-        <MobileSkillsSection />
-        <MobileProjectsSection />
-        <MobileExperienceSection />
-        <MobileCertificationsSection />
-        <MobileContactSection />
+        <ResponsiveHeroSection />
+        <ResponsiveAboutSection />
+        <ResponsiveSkillsSection />
+        <ResponsiveProjectsSection />
+        <ResponsiveExperienceSection />
+        <ResponsiveCertificationsSection />
+        <ResponsiveContactSection />
       </main>
-      <MobileFooter />
+      <ResponsiveFooter />
     </div>
   )
 }
